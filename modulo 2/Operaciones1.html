@@ -1,45 +1,63 @@
-<html>
-<body>
-<script type="text/javascript">
-<!--
-var a = 33;
-var b = 10;
-var c = "Test";
-var linebreak = "<br />";
-document.write("a + b = ");
-result = a + b;
-document.write(result);
-document.write(linebreak);
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+      <script type="text/javascript">
+          var a = 33;
+          var b = 10;
 
-document.write("a - b = ");
-result = a - b;
-document.write(result);
-document.write(linebreak);
-document.write("a / b = ");
-result = a / b;
-document.write(result);
-document.write(linebreak);
-document.write("a % b = ");
-result = a % b;
-document.write(result);
-document.write(linebreak);
-document.write("a + b + c = ");
-result = a + b + c;
-document.write(result);
-document.write(linebreak);
-a = a++;
-document.write("a++ = ");
-result = a++;
-document.write(result);
-document.write(linebreak);
-b = b--;
-document.write("b-- = ");
-result = b--;
-document.write(result);
-document.write(linebreak);
+          var c = "Test";
+          var linebreak = "<br />";
+          document.write("var a =" + a);
+          document.write(linebreak);
 
-//-->
-</script>
+          document.write("var b =" + b);
+          document.write(linebreak);
+
+          document.write("var c =" + c);
+          document.write(linebreak);
+          document.write(linebreak);
+          document.write(linebreak);
+
+          document.write("a + b = ");
+          result = a + b;
+          document.write(result);
+          document.write(linebreak);
+          document.write("a - b = ");
+          result = a - b;
+          document.write(result);
+          document.write(linebreak);
+          document.write("a / b = ");
+          result = a / b;
+          document.write(result);
+          document.write(linebreak);
+          document.write("a % b = ");
+          result = a % b;
+          document.write(result);
+          document.write(linebreak);
+          document.write("a + b + c = ");
+          //document.write("c + a + b = ");
+          result = a + b + c;
+          //result = c + b + a;
+
+          document.write(result);
+          document.write(linebreak);
+          //a = a++;
+          //a = a++;
+          a=a++;
+          document.write("a++ = ");
+          result = a++;
+          document.write(result);
+          document.write(linebreak);
+          b = b--;
+          document.write("b-- = ");
+          result = b--;
+          document.write(result);
+          document.write(linebreak);
+      </script>
 <p>Set the variables to different values and then try...</p>
-</body>
+  </body>
 </html>
