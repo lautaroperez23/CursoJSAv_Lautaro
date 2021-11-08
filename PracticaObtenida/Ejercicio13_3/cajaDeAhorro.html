@@ -13,6 +13,18 @@
         document.write("<br/><br/><br/>Creo una CA con $1300 e interes de 2.1") ;
         document.write(cuenta);
 
+        document.write("<br/><br/><br/>Ahora le sumo 500");
+        cuenta.acreditar(500);
+        document.write(cuenta);
+
+        document.write("<br/><br/><br/>Ahora le debito 300");
+        cuenta.debitar(300);
+        document.write(cuenta);
+
+        document.write("<br/><br/><br/>Ahora le debito 2000 y no me tiene que dejar");
+        cuenta.debitar(2000);
+        document.write(cuenta);
+
     </script>
   </body>
 </html>
