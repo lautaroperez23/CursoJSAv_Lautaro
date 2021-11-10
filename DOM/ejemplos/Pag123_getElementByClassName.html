@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="example">Some text here</div>
+    <img class="example"></img>
+    <style class="example"></style>
+    <script>
+      const elems = document.getElementsByClassName( 'example' );
+
+      for (var i = 0; i < elems.length; i++){
+        document.write('id Elemento numero ' + i + ': ' + elems[i].id + '<br/>');
+        document.write('Class Elemento numero ' + i + ': ' + elems[i].className + '<br/>');
+        document.write('Texto Elemento numero ' + i + ': ' + elems[i].innerHTML + '<br/><br/>');
+      }
+
+
+    </script>
+
+  </body>
+</html>

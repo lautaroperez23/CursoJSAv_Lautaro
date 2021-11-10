@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="div0">
+      <div id="div1"> Some text here </div>
+      <div id="div2"> Some text here </div>
+      <div id="div3"> Some text here </div>
+    </div>
+    <script>
+      const div0 = document.getElementById( 'div0' );
+      const child1 = div0.firstElementChild; //div1
+      const child2 = div0.childNodes[1]; // div2
+      const child3 = div0.lastElementChild; // div3
+    </script>
+
+    <script>
+
+
+      document.write('div0 id: ' + div0.id + '<br/>')
+      document.write('div0 Text: ' + div0.innerText + '<br/><br/>')
+
+      document.write('child1 id: ' + child1.id + '<br/>')
+      document.write('child1 Text: ' + child1.innerText + '<br/><br/>')
+
+      document.write('child2 id: ' + child2.id + '<br/>')
+      document.write('child2 Text: ' + child2.innerText + '<br/><br/>')
+
+      document.write('child3 id: ' + child3.id + '<br/>')
+      document.write('child3 Text: ' + child3.innerText + '<br/><br/>')
+
+
+    </script>
+
+  </body>
+</html>

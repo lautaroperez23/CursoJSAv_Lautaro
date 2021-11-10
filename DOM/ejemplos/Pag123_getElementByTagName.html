@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="exampleDiv1">Some text here</div>
+    <div id="exampleDiv2">Some text here</div>
+    <div id="exampleDiv3">Some text here</div>
+    <script>
+      const elems = document.getElementsByTagName( 'div' );
+      const contenidoDiv1 = elems[0].innerText;
+      const contenidoDiv2 = elems[1].innerText;
+      const contenidoDiv3 = elems[2].innerText;
+
+      document.write("Muestro los contenidos:" + '<br/><br/>')
+
+      document.write(contenidoDiv1 + '<br/>');
+      document.write(contenidoDiv2 + '<br/>');
+      document.write(contenidoDiv3 + '<br/>');
+    </script>
+
+  </body>
+</html>
