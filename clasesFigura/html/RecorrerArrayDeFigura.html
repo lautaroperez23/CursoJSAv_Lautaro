@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Recorre una coleccion de Figuras</title>
+    <script src="../js/figura.js" charset="utf-8"></script>
+    <script src="../js/circulo.js" charset="utf-8"></script>
+    <script src="../js/rectangulo.js" charset="utf-8"></script>
+    <script src="../js/triangulo.js" charset="utf-8"></script>
+    <script src="../js/cuadrado.js" charset="utf-8"></script>
+  </head>
+
+  <body>
+    <h1>Vamos a recorrer una coleccion de Figuras </h1>
+    <script type="text/javascript">
+
+      try {
+        let figuras = new Array(new Cuadrado('cuadrado',13),
+                                new Cuadrado("cuadrado",2000),
+                                new Circulo("circulo",150),
+                                new Circulo("circulo",130),
+                                new Rectangulo("Rectangulo",130,110),
+                                new Rectangulo("Rectangulo",30,10),
+                                new Triangulo("Triangulo",10,20),
+                                new Triangulo("Triangulo",50,10));
+
+        figuras.forEach((item, i) => {
+          document.write(`<br/><br/>Figuras: ${i} ${item}`);
+        });
+
+        document.write(`<br/><br/> las figuras que tengan una superficie mayor que 100`);
+        figuras.filter(figura  => figura.calcularSuperficie()>100).forEach((item, i) => {
+          document.write(`<br/><br/>Figuras: ${i} ${item}`);
+        });
+
+        document.write(`<br/><br/> figuras que tengan un perímetro menor que 150`);
+        figuras.filter(figura  => figura.calcularPerimetro()<150).forEach((item, i) => {
+          document.write(`<br/><br/>Figuras: ${i} ${item}`);
+        });
+
+        document.write(`<br/><br/> la mayor superficie de todas`);
+        figuras.sort((b,a) =>{
+          return a.calcularSuperficie() - b.calcularSuperficie();
+        })
+
+        document.write(`<br/><br/>Figura: ${figuras[0] }`);
+
+        document.write(`<br/><br/> la mayor superficie de todas`);
+        figuras.sort((a,b) =>{
+          return a.calcularSuperficie() - b.calcularSuperficie();
+        })
+
+            document.write(`<br/><br/>Figura: ${figuras[0] }`);
+
+        document.write(`<br/><br/> el primer, tercer y quinto elemento del array utilizando Destructuring.`);
+        const [a,,b,,c] = figuras;
+        [a,b,c].forEach((item, i) => {
+          document.write(`<br/><br/>Figuras: ${i} ${item}`);
+        });
+
+
+      } catch (e) {
+        console.error(e.message);
+      } finally {
+        document.write(`<br/><br/>FIN`);
+
+      }
+
+
+
+/*
+      document.write(`<br/><br/>todas las cuentas con saldo menor a 2500`);
+      cuentas.filter(cuenta => cuenta.sal<2500).forEach((item, i) => {
+        document.write(`<br/><br/>Cuenta: ${i} ${item}`);
+      });
+      document.write(`<br/><br/>todas las cuentas que al restarle 100 superan los 2400`);
+      cuentas.filter(cuenta=> cuenta.sal-100>2400)
+             .forEach((item, i) => {
+               document.write(`<br/><br/>Cuenta: ${i} ${item}`);
+             });
+      document.write(`<br/><br/>todas las cuentas luego de debitarle 500`);
+      cuentas.forEach((cuenta, i) => {
+          cuenta.debitar(500);
+          document.write(`<br/><br/>Cuenta: ${i} ${cuenta}`);
+      });
+      document.write(`<br/><br/>Sumarle 5000 a todos las cuentas que a esta altura tengan saldo menor que 1500`);
+      cuentas.filter(cuenta=> cuenta.sal>1500)
+             .forEach((cuenta, i) => {
+               cuenta.acreditar(5000);
+               document.write(`<br/><br/>Cuenta: ${i} ${cuenta}`);
+             });
+             document.write(`<br/><br/>Mostrar todas las cuentas y la suma total de todos los saldos`);
+              document.write(`<br/><br/>Cuenta: ${cuentas.reduce((total,cuenta) => {
+                return total+=cuenta.sal;
+              },0)}`);
+
+*/
+
+
+    </script>
+  </body>
+</html>

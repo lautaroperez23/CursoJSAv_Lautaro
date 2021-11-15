@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Recorre una coleccion de cuentas</title>
+    <script src="../clases/js/cuentas.js" charset="utf-8"></script>
+    <script src="../clases/js/cajadeAhorro.js" charset="utf-8"></script>
+    <script src="../clases/js/CuentaCorriente.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Vamos a recorrer una coleccion de cuentas </h1>
+    <script type="text/javascript">
+
+
+      let cuentas = new Array(new CajaDeAhorro(1,100,10),
+                              new CuentaCorriente(2,2000,1000),
+                              new CajaDeAhorro(3,150,2.3),
+                              new CuentaCorriente(4,2500,3000),
+                              new CajaDeAhorro(5,2700,2500));
+
+      cuentas.forEach((item, i) => {
+        document.write(`<br/><br/>Cuenta: ${i} ${item}`);
+      });
+      document.write(`<br/><br/>todas las cuentas con saldo menor a 2500`);
+      cuentas.filter(cuenta => cuenta.sal<2500).forEach((item, i) => {
+        document.write(`<br/><br/>Cuenta: ${i} ${item}`);
+      });
+      document.write(`<br/><br/>todas las cuentas que al restarle 100 superan los 2400`);
+      cuentas.filter(cuenta=> cuenta.sal-100>2400)
+             .forEach((item, i) => {
+               document.write(`<br/><br/>Cuenta: ${i} ${item}`);
+             });
+      document.write(`<br/><br/>todas las cuentas luego de debitarle 500`);
+      cuentas.forEach((cuenta, i) => {
+          cuenta.debitar(500);
+          document.write(`<br/><br/>Cuenta: ${i} ${cuenta}`);
+      });
+      document.write(`<br/><br/>Sumarle 5000 a todos las cuentas que a esta altura tengan saldo menor que 1500`);
+      cuentas.filter(cuenta=> cuenta.sal>1500)
+             .forEach((cuenta, i) => {
+               cuenta.acreditar(5000);
+               document.write(`<br/><br/>Cuenta: ${i} ${cuenta}`);
+             });
+             document.write(`<br/><br/>Mostrar todas las cuentas y la suma total de todos los saldos`);
+              document.write(`<br/><br/>Cuenta: ${cuentas.reduce((total,cuenta) => {
+                return total+=cuenta.sal;
+              },0)}`);
+
+
+
+    </script>
+  </body>
+</html>

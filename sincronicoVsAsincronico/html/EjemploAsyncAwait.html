@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejemplo Async Await</title>
+    <script src="../js/funcionesAsyncAwait.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      example1().then( console.log ); // Expected output: Hello
+      example2().then( console.log ); // Expected output: World
+
+      errorExample1().catch( console.log ); // Expected output: Rejected!
+      errorExample2().catch( console.log ); // Expected output: Rejected!
+      errorExample3().catch( console.log ); // Expected output: Rejected!
+
+      tryCatchExample();
+    </script>
+  </body>
+</html>

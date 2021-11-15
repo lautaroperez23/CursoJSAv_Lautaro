@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Zero Delay</title>
+  </head>
+  <body>
+    <h1>Zero Delay functions</h1>
+    <script type="text/javascript">
+      setTimeout( () => {
+        document.write("<br/>step1");
+        console.log( 'step1' ); }, 0 );
+
+      setTimeout( () => {
+        document.write("<br/>done!");
+        console.log( 'done!' ); }, 0 );
+
+      document.write("<br/>step0");
+      console.log( 'step0' );
+    </script>
+  </body>
+</html>

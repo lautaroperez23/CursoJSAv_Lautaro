@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Clase cuentas</title>
+    <script src="../clases/js/cuentas.js" charset="utf-8"></script>
+    <script src="../clases/js/cajadeAhorro.js" charset="utf-8"></script>
+    <script src="../clases/js/CuentaCorriente.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>clase cuentas tiene Numero de cuenta y dinero en cuenta </h1>
+    <script type="text/javascript">
+      var cuenta  = new Cuenta( 123412 ,10000 );
+      document.write("<br/>Numero de cuenta: " + cuenta.num);
+      document.write("<br/>dinero en cuenta: " + cuenta.sal);
+      cuenta.debitar( 2000 );
+      document.write("<br/>dinero en cuenta despues de debitar: " + cuenta.sal);
+      cuenta.acreditar( 200 );
+      document.write("<br/>dinero en cuenta despues de acreditar: " + cuenta.sal);
+
+      document.write("<br/><br/><br/>Prueba del toString: " + cuenta.toString());
+
+    </script>
+  </body>
+</html>

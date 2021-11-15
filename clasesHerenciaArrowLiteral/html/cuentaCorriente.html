@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Clase Cuenta corriente</title>
+    <script src="../clases/js/cuentas.js" charset="utf-8"></script>
+    <script src="../clases/js/cajadeAhorro.js" charset="utf-8"></script>
+    <script src="../clases/js/CuentaCorriente.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>clase  Cuenta corriente tiene Numero de cuenta , dinero en cuenta e descubierto </h1>
+    <script type="text/javascript">
+      document.write("<br/>Valores originales: ");
+      var cuenta  = new CuentaCorriente( 123 ,7300.5 ,1000 );
+      document.write("<br/>Numero de cuenta: " + cuenta.num);
+      document.write("<br/>dinero en cuenta: " + cuenta.sal);
+      document.write("<br/>descubierto Base: " + cuenta.descubierto);
+      document.write("<br/>Ahora le sumo 100.3: ");
+      cuenta.acreditar( 100.3 );
+      document.write("<br/>dinero en cuenta despues de acreditar: " + cuenta.sal);
+      document.write("<br/>descubierto  " + cuenta.descubierto);
+      document.write("<br/>Ahora le debito 400.8: ");
+
+      cuenta.debitar( 400.8 );
+      document.write("<br/>dinero en cuenta despues de debitar: " + cuenta.sal);
+      document.write("<br/>descubierto  " + cuenta.descubierto);
+      document.write("<br/>Ahora le debito 7500 y  me tiene que dejar: ");
+      cuenta.debitar( 7500 );
+      document.write("<br/>dinero en cuenta despues de debitar devuelta: " + cuenta.sal);
+      document.write("<br/>descubierto d " + cuenta.descubierto);
+      document.write("<br/>Ahora le debito 600 y NO me tiene que dejar: ");
+      cuenta.debitar( 600 );
+      document.write("<br/>dinero en cuenta despues de debitar devuelta: " + cuenta.sal);
+      document.write("<br/>descubierto d " + cuenta.descubierto);
+
+    </script>
+  </body>
+</html>

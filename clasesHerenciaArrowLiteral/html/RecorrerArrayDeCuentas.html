@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Recorre una coleccion de cuentas</title>
+    <script src="../clases/js/cuentas.js" charset="utf-8"></script>
+    <script src="../clases/js/cajadeAhorro.js" charset="utf-8"></script>
+    <script src="../clases/js/CuentaCorriente.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Vamos a recorrer una coleccion de cuentas </h1>
+    <script type="text/javascript">
+
+
+      let cuentas = new Array(new CajaDeAhorro(1,100,10),
+                              new CuentaCorriente(2,2000,1000),
+                              new CajaDeAhorro(3,150,2.3),
+                              new CuentaCorriente(4,2500,3000),
+                              new CajaDeAhorro(5,2700,2500));
+
+      for(var i = 0; i < cuentas.length; i++ ){
+        document.write("<br/>Cuenta en la posicion: " + i);
+        document.write("<br/>Numero: " + cuentas[i].num);
+        document.write("<br/>Saldo: " + cuentas[i].sal);
+      }
+      for(var i = 0; i < cuentas.length; i++ ){
+        document.write("<br/><br/>Cuenta: " + i + " " +cuentas[i].toString());
+      }
+
+    </script>
+  </body>
+</html>

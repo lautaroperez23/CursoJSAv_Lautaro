@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cuenta Figura</title>
+
+    <!--cuentas -->
+    <script src="../../CuentaProfe/Cuenta.js" charset="utf-8"></script>
+    <script src="../../CuentaProfe/CajaDeAhorro.js" charset="utf-8"></script>
+    <script src="../../CuentaProfe/CuentaCorriente.js" charset="utf-8"></script>
+
+    <!--figura -->
+
+    <script src="../../clasesFigura/js/Figura.js" charset="utf-8"></script>
+    <script src="../../clasesFigura/js/Circulo.js" charset="utf-8"></script>
+    <script src="../../clasesFigura/js/Cuadrado.js" charset="utf-8"></script>
+    <script src="../../clasesFigura/js/Rectangulo.js" charset="utf-8"></script>
+    <script src="../../clasesFigura/js/Triangulo.js" charset="utf-8"></script>
+
+    <script src="../js/funciones.js" charset="utf-8"></script>
+    <script src="../js/funcionesAsyncAwait.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Vamos a recorrer las cuentas</h1>
+  <script type="text/javascript">
+      //punto A
+      let cuentas =new Array(new CajaDeAhorro(1,1000,2.3),
+                                  new CuentaCorriente(2,2000,1000 ),
+                                  new CajaDeAhorro(3,3000, 5.2),
+                                  new CuentaCorriente(4,5000,3000 ),
+                                  new CajaDeAhorro(5,1500, 3.3),
+                                  new CuentaCorriente(6,2500,1300 )   );
+      //punto B
+      let figuras = new Array(
+                              		new Circulo('Circulo1', 10),
+                              		new Circulo('Circulo2', 100),
+                              		new Cuadrado('Cuadrado1', 125),
+                              		new Cuadrado('Cuadrado2', 20),
+                              		new Rectangulo('Rectangulo1', 104, 102),
+                              		new Rectangulo('Rectangulo2', 20, 20),
+                              		new Triangulo('Triangulo1', 10, 10),
+                              		new Triangulo('Triangulo2', 200, 20)
+                              	);
+        //todas las cuentas
+
+    mostrarArrayConDebito(cuentas, 0).then(console.log)
+                                     .catch(console.log);
+
+
+    mostrarArrayConDebito(cuentas, 1500).then(console.log)
+                                        .catch(console.log);
+
+  let myPromise =  mostrarArrayConDebito(cuentas, 1500);
+  myPromise.then(console.log);
+  myPromise.catch(console.log);
+
+        //todas las figuras
+        fn_MostrarArray( ()=> {
+            document.write("<br/>*********************3-todas las figuras*********************<br/>")
+            figuras.forEach((figura, i) => {
+                document.write(`<br/><br/>figura[${i}]
+                           <br/>figura=${figura}`);
+            });
+
+        },45);
+
+        //todas las cuentas con saldo mayor que 1500
+        fn_MostrarArray( ()=> {
+            document.write("<br/>*********************1-todas las cuentas con saldo mayor ques 1500*********************<br/>")
+            cuentas.filter (cuenta=>cuenta.saldo>1500)
+                    .forEach((cuenta, i) => {
+                document.write(`<br/><br/>cuenta[${i}]
+                           <br/>cuenta=${cuenta}`);
+            });
+
+        },15);
+
+        //todas las figuras con supeprficie mayor que 50
+        fn_MostrarArray( ()=> {
+            document.write("<br/>*********************4-todas las superficies mayor ques 50*********************<br/>")
+            figuras.filter (figura=>figura.calcularSuperficie()>50)
+                    .forEach((figura, i) => {
+                        document.write(`<br/><br/>figura[${i}]
+                        <br/>figura=${figura}`);
+            });
+
+        },90);
+        //todas las figuras con el perimetro menor 100
+        fn_MostrarArray( ()=> {
+            document.write("<br/>*********************5-todas los perimetros menores que 100*********************<br/>")
+            figuras.filter (figura=>figura.calcularPerimetro()<100)
+                    .forEach((figura, i) => {
+                document.write(`<br/><br/>figura[${i}]
+                           <br/>figura=${figura}`);
+            });
+
+        },105);
+
+/*
+        const myPromise = new Promise( ( resolve, reject, cuentas ) =>
+          {
+            console.log( 'Starting asynchronous work!' );
+            setTimeout( (cuentas) => {
+                  cuentas.forEach((item, i) => {
+                      console.log(`cuenta[${i}]
+                                 <br/>cuenta=${item}`);
+                  });
+              resolve( 'fin ok');
+              //reject( new Error('Promise was resolved!' ));
+              //reject( 'Promise was resolved!' );
+            }, 1000 );
+
+
+          } );
+
+        myPromise.then( value => console.log( `then=${value}` ) );
+        myPromise.catch( err => console.log( `catch=${err}` ) );
+*/
+
+
+
+  </script>
+  </body>
+</html>

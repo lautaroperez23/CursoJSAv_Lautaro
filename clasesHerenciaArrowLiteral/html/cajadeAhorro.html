@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Clase Caja de ahorro</title>
+    <script src="../clases/js/cuentas.js" charset="utf-8"></script>
+    <script src="../clases/js/cajadeAhorro.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>clase  Caja de ahorro tiene Numero de cuenta , dinero en cuenta e interes </h1>
+    <script type="text/javascript">
+      document.write("<br/>Valores originales: ");
+      var cuenta  = new CajaDeAhorro( 200 ,1500 ,2.5 );
+      document.write("<br/>Numero de cuenta: " + cuenta.num);
+      document.write("<br/>dinero en cuenta: " + cuenta.sal);
+      document.write("<br/>Interes Base: " + cuenta.interes);
+      document.write("<br/>Ahora le sumo 500: ");
+      cuenta.acreditar( 500 );
+      document.write("<br/>dinero en cuenta despues de acreditar: " + cuenta.sal);
+      document.write("<br/>Interes despues de acreditar: " + cuenta.interes);
+      document.write("<br/>Ahora le debito 300: ");
+
+      cuenta.debitar( 300 );
+      document.write("<br/>dinero en cuenta despues de debitar: " + cuenta.sal);
+      document.write("<br/>Interes despues de debitar: " + cuenta.interes);
+      document.write("<br/>Ahora le debito 2000 y no me tiene que dejar: ");
+      cuenta.debitar( 2000 );
+      document.write("<br/>dinero en cuenta despues de debitar devuelta: " + cuenta.sal);
+      document.write("<br/>Interes despues de debitar devuelta: " + cuenta.interes);
+
+    </script>
+  </body>
+</html>

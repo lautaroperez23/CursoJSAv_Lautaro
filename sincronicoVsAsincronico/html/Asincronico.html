@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Asincronica</title>
+    <h1>llamadas asincronicas bloqueantes</h1>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+      console.log("llamadas asincronicas bloqueantes al principio");
+      document.write("<br/>llamadas asincronicas bloqueantes");
+      setTimeout( () => {
+        // WARNING: this may take a long time to run on a slow computer
+        // Try with smaller numbers first
+        for( let i = 0; i < 20000000; i++ ) {}
+            console.log( 'done delaying' );
+            document.write("<br/>done delayint");
+        }, 0 );
+      setTimeout( () => {
+            document.write("<br/>done!");
+            console.log( 'done!' ) }, 0 );
+    console.log("terminar la cosa");        
+    </script>
+  </body>
+</html>

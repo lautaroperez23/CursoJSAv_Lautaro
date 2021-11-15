@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Promise Solving</title>
+      <script src="../js/funciones.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+//    try {
+      const myPromise = new Promise( ( resolve, reject ) =>
+        {
+          console.log( 'Starting asynchronous work!' );
+          setTimeout( () => {
+            //HANDLER .......
+            //vamos a poner nuestra magia
+            //un Array de cuentas, figuras
+            //si esta todo bien resove vamos a devolver un valor
+            //si todo mal
+            //causas de error
+            // si quiero leer mas alla de lcantidad -
+            //en en una caja  reject
+
+            //resolve( 'Done!');
+            //reject( new Error('Promise was resolved!' ));
+            reject( 'Promise was resolved!' );
+          }, 1000 );
+
+
+        } );
+
+      myPromise.then( value => console.log( `then=${value}` ) );
+      myPromise.catch( err => console.log( `catch=${err}` ) );
+      // myPromise.finally( value => {
+      //     console.log( 'finally=Finally!' );
+      //         } );
+
+    // } catch (e) {
+    //     console.log(`<br/><br/><br/>El error es=${e.message} `)
+    } finally {
+      console.log("El finally del try genenral")
+    }
+
+    </script>
+  </body>
+</html>
